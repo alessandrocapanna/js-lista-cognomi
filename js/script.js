@@ -13,5 +13,6 @@ cognomiPresenti.sort();
 // // stampo lista ordinata alf e la posizione
 for (var i = 0; i < cognomiPresenti.length; i++) {
   elementoLista.innerHTML += '<li>' + cognomiPresenti[i] + '</li>';
+  // elementoLista.innerHTML = elementoLista.innerHTML + '<li>' + cognomiPresenti[i] + '</li>';
 }
 console.log('la posizione umana è: ' + (cognomiPresenti.indexOf(cognomeUtente) + 1)+ ' su ' + (cognomiPresenti.length));
