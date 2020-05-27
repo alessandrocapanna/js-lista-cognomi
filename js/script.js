@@ -1,13 +1,17 @@
-// Chiedere all’utente il cognome
+// Chiedere all’utente il cognome e array con cognomi cognomi gia presenti
 var cognomeUtente = prompt("inserisci il tuo cognome");
+var cognomiPresenti = [ 'bianchi', 'rossi', 'duzioni', 'balsano', 'verdi'];
+var elementoLista = document.getElementById('lista');
 
-// inserirlo in un array con altri cognomi: ‘Bianchi’, ‘Rossi’, ‘Duzioni’, ‘Balsano’, ‘Verdi’
-var cognomiPresenti = [ 'Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Verdi'];
+// verifico se il cognome è vuoto ,se è un numero ,inserisco nuovo cognome e ordino alfabeeticamente
+while ( (isNaN(parseInt(cognomeUtente)) === false) || cognomeUtente.length == 0) {
+  cognomeUtente = prompt('errore daammi il tuo vero nome');
+}
 cognomiPresenti.push(cognomeUtente);
-
-// stampa la lista ordinata alfabeticamente
 cognomiPresenti.sort();
-alert('questa è la lista dei cognomi in ordine alfabeetico: ' + cognomiPresenti);
 
-// scrivi anche la posizione "umana" della lista in cui il nuovo utente si trova
-alert('la posizione umana è: ' + (cognomiPresenti.indexOf(cognomeUtente) + 1)+ ' su ' + (cognomiPresenti.length));
+// // stampo lista ordinata alf e la posizione
+for (var i = 0; i < cognomiPresenti.length; i++) {
+  elementoLista.innerHTML += '<li>' + cognomiPresenti[i] + '</li>';
+}
+console.log('la posizione umana è: ' + (cognomiPresenti.indexOf(cognomeUtente) + 1)+ ' su ' + (cognomiPresenti.length));
